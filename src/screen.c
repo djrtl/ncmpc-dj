@@ -34,6 +34,7 @@
 #include "screen_queue.h"
 #include "screen_file.h"
 #include "screen_artist.h"
+#include "screen_genre.h"
 #include "screen_search.h"
 #include "screen_song.h"
 #include "screen_keydef.h"
@@ -548,6 +549,11 @@ screen_cmd(struct mpdclient *c, command_t cmd)
 #ifdef ENABLE_ARTIST_SCREEN
 	case CMD_SCREEN_ARTIST:
 		screen_switch(&screen_artist, c);
+		break;
+#endif
+#ifdef ENABLE_GENRE_SCREEN
+	case CMD_SCREEN_GENRE:
+		screen_switch(&screen_genre, c);
 		break;
 #endif
 #ifdef ENABLE_SONG_SCREEN

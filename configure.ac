@@ -243,6 +243,19 @@ fi
 
 AM_CONDITIONAL(ENABLE_ARTIST_SCREEN, test x$enable_artist_screen = xyes)
 
+dnl Optional screen - genre
+AC_MSG_CHECKING([whether to include the genre screen])
+AC_ARG_ENABLE([genre-screen], 
+              AS_HELP_STRING([--enable-genre-screen],
+		[Enable genre screen @<:@default=yes@:>@]),,
+	[enable_genre_screen=$disable_mini])
+AC_MSG_RESULT([$enable_genre_screen])
+if test "x$enable_genre_screen" = "xyes" ; then
+    AC_DEFINE(ENABLE_GENRE_SCREEN, 1, [Enable genre screen])
+fi
+
+AM_CONDITIONAL(ENABLE_GENRE_SCREEN, test x$enable_genre_screen = xyes)
+
 dnl Optional screen - search
 AC_MSG_CHECKING([whether to include the search screen])
 AC_ARG_ENABLE([search-screen], 

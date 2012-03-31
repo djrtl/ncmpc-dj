@@ -52,6 +52,7 @@ ncmpc_headers = \
 	src/screen_queue.h \
 	src/screen_file.h \
 	src/screen_artist.h \
+	src/screen_genre.h \
 	src/screen_browser.h \
 	src/screen_search.h \
 	src/screen_song.h \
@@ -133,6 +134,10 @@ endif
 
 if ENABLE_ARTIST_SCREEN
 src_ncmpc_SOURCES += src/screen_artist.c
+endif
+
+if ENABLE_GENRE_SCREEN
+src_ncmpc_SOURCES += src/screen_genre.c
 endif
 
 if ENABLE_SEARCH_SCREEN

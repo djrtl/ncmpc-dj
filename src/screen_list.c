@@ -24,6 +24,7 @@
 #include "screen_queue.h"
 #include "screen_file.h"
 #include "screen_artist.h"
+#include "screen_genre.h"
 #include "screen_search.h"
 #include "screen_song.h"
 #include "screen_keydef.h"
@@ -41,6 +42,9 @@ static const struct
 	{ "browse", &screen_browse },
 #ifdef ENABLE_ARTIST_SCREEN
 	{ "artist", &screen_artist },
+#endif
+#ifdef ENABLE_GENRE_SCREEN
+	{ "genre", &screen_genre },
 #endif
 #ifdef ENABLE_HELP_SCREEN
 	{ "help", &screen_help },

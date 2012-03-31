@@ -81,6 +81,9 @@ title_bar_paint(const struct title_bar *p, const char *title,
 #ifdef ENABLE_ARTIST_SCREEN
 		print_hotkey(w, CMD_SCREEN_ARTIST, _("Artist"));
 #endif
+#ifdef ENABLE_GENRE_SCREEN
+		print_hotkey(w, CMD_SCREEN_GENRE, _("Genre"));
+#endif
 #ifdef ENABLE_SEARCH_SCREEN
 		print_hotkey(w, CMD_SCREEN_SEARCH, _("Search"));
 #endif

@@ -63,6 +63,9 @@ static const struct help_text_row help_text[] = {
 #ifdef ENABLE_ARTIST_SCREEN
 	{ 0, CMD_SCREEN_ARTIST, NULL },
 #endif
+#ifdef ENABLE_GENRE_SCREEN
+	{ 0, CMD_SCREEN_GENRE, NULL },
+#endif
 #ifdef ENABLE_SEARCH_SCREEN
 	{ 0, CMD_SCREEN_SEARCH, NULL },
 #endif

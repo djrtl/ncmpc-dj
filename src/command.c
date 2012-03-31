@@ -214,8 +214,12 @@ static command_definition_t cmds[] = {
 	{ {'4', F4, 0 }, 0, CMD_SCREEN_ARTIST, "screen-artist",
 	  N_("Artist screen") },
 #endif
+#ifdef ENABLE_GENRE_SCREEN
+	{ {'5', F5, 0 }, 0, CMD_SCREEN_GENRE, "screen-genre",
+	  N_("Genre screen") },
+#endif
 #ifdef ENABLE_SEARCH_SCREEN
-	{ {'5', F5, 0 }, 0, CMD_SCREEN_SEARCH, "screen-search",
+	{ {'6', F6, 0 }, 0, CMD_SCREEN_SEARCH, "screen-search",
 	  N_("Search screen") },
 	{ {'m', 0, 0 }, 0, CMD_SEARCH_MODE, "search-mode",
 	  N_("Change search mode") },
