@@ -360,6 +360,8 @@ mpdclient_cmd_volume(struct mpdclient *c, gint value)
 bool
 mpdclient_cmd_volume_up(struct mpdclient *c)
 {
+  int new_volume;
+
 	struct mpd_connection *connection = mpdclient_get_connection(c);
 	if (connection == NULL)
 		return false;
@@ -374,7 +376,17 @@ mpdclient_cmd_volume_up(struct mpdclient *c)
 	if (c->volume >= 100)
 		return true;
 
-	return mpdclient_cmd_volume(c, ++c->volume);
+  new_volume = (c->volume*9)/8;
+
+  if (c->volume == new_volume)
+    ++c->volume;
+  else
+    c->volume = new_volume;
+
+  if (c->volume > 100)
+    c->volume = 100;
+
+	return mpdclient_cmd_volume(c, c->volume);
 }
 
 bool
@@ -393,7 +405,8 @@ mpdclient_cmd_volume_down(struct mpdclient *c)
 	if (c->volume <= 0)
 		return true;
 
-	return mpdclient_cmd_volume(c, --c->volume);
+  c->volume = (c->volume*7)/8;
+	return mpdclient_cmd_volume(c, c->volume);
 }
 
 bool
